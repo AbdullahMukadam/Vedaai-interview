@@ -1,6 +1,7 @@
 {
   "name": "assessment-extraction",
   "private": true,
+  "packageManager": "npm@11.8.0",
   "workspaces": [
     "apps/*",
     "packages/*"

@@ -1,0 +1,6 @@
+{
+  "buildCommand": "turbo build --filter=@repo/web",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "installCommand": "npm install"
+}
