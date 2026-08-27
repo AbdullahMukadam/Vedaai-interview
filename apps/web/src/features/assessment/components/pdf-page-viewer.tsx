@@ -73,10 +73,10 @@ export function PdfPageViewer({ data, pageNumber, scale, highlights, onTotalPage
   }
 
   return (
-    <div className="relative inline-block">
+    <div className="relative inline-block max-w-full">
       <canvas
         ref={canvasRef}
-        className="block"
+        className="block max-w-none"
         style={{ transform: `scale(${scale})`, transformOrigin: "top left" }}
       />
 
@@ -101,7 +101,7 @@ export function PdfPageViewer({ data, pageNumber, scale, highlights, onTotalPage
           >
             <div className="absolute -top-6 left-2 rounded-t-lg bg-[#34AC15] px-2 py-0.5">
               <span className="text-[12px] font-bold text-white">
-                {h.questionLabel}
+                Q{h.questionLabel}
               </span>
             </div>
           </div>

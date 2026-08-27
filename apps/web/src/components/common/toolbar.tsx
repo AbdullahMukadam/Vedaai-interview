@@ -1,19 +1,21 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface ToolbarProps {
   sidebarCollapsed: boolean;
 }
 
 export function Toolbar({ sidebarCollapsed }: ToolbarProps) {
+  const router = useRouter()
   return (
     <header
       className={`hidden lg:flex items-center gap-2 rounded-2xl bg-white/75 px-6 h-14 transition-all duration-300 ${
         sidebarCollapsed ? "ml-[88px]" : "ml-[328px]"
       } mt-3 mx-3`}
     >
-      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white">
+      <div onClick={() => router.push("/")} className="flex cursor-pointer h-10 w-10 items-center justify-center rounded-full bg-white">
         <Image src="/images/arrow-back.svg" alt="Back" width={24} height={24} />
       </div>
       <div className="flex items-center gap-2">

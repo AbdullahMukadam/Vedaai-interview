@@ -7,17 +7,11 @@ import { useAssessment } from "@/providers/assessment-provider";
 export function QuestionsPanel() {
   const { result, expandedQuestionIds, toggleQuestionExpanded } = useAssessment();
 
-  if (!result) {
-    return (
-      <div className="flex flex-1 items-center justify-center rounded-[20px] bg-white/50 p-4">
-        <p className="text-[16px] text-[rgba(94,94,94,0.8)]">No questions extracted yet.</p>
-      </div>
-    );
-  }
-
-  const allExpanded = result.mapping.length > 0 && result.mapping.every((m) => expandedQuestionIds.has(m.questionId));
+  const allExpanded =
+    result && result.mapping.length > 0 && result.mapping.every((m) => expandedQuestionIds.has(m.questionId));
 
   const expandAll = useCallback(() => {
+    if (!result) return;
     if (allExpanded) {
       result.mapping.forEach((m) => {
         if (expandedQuestionIds.has(m.questionId)) {
@@ -32,6 +26,14 @@ export function QuestionsPanel() {
       });
     }
   }, [allExpanded, result, expandedQuestionIds, toggleQuestionExpanded]);
+
+  if (!result) {
+    return (
+      <div className="flex flex-1 items-center justify-center rounded-[20px] bg-white/50 p-4">
+        <p className="text-[16px] text-[rgba(94,94,94,0.8)]">No questions extracted yet.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-1 flex-col gap-3 rounded-[20px] bg-white/50 p-4">
@@ -56,11 +58,7 @@ export function QuestionsPanel() {
           const isExpanded = expandedQuestionIds.has(m.questionId);
 
           return (
-            <div
-              key={m.questionId}
-              onClick={() => toggleQuestionExpanded(m.questionId)}
-              className="cursor-pointer"
-            >
+            <div key={m.questionId}>
               <QuestionCard
                 number={parseInt(question.number) || 0}
                 text={question.text}

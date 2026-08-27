@@ -21,7 +21,10 @@ Analyze the provided answer sheet images/PDF and extract every answer region.
 Rules:
 1. For each answer found, identify which question number it is answering.
 2. Extract the full handwritten text of the answer.
-3. Provide the bounding box of the answer region on the page as [ymin, xmin, ymax, xmax] with coordinates normalized to 0-1000 (where 0,0 is top-left and 1000,1000 is bottom-right).
+3. Provide TWO bounding boxes for each answer:
+   - boundingBox: the region covering just the answer text body.
+   - questionBoundingBox: the region covering just the question number/heading the student wrote directly above the answer.
+   All coordinates as [ymin, xmin, ymax, xmax] normalized to 0-1000 (where 0,0 is top-left and 1000,1000 is bottom-right).
 4. Record the page number where the answer appears.
 5. Indicate whether the answer appears complete or cut off.
 6. If a student has written an answer for a question that doesn't match any extracted question, still include it with the question number they wrote.

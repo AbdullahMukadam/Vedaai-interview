@@ -67,7 +67,7 @@ export function AnswerMappingScreen() {
       >
         <div className="hidden lg:flex flex-1 gap-3 p-3 overflow-hidden">
           <motion.div
-            className="flex flex-1"
+            className="flex flex-1 min-w-0"
             initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
@@ -75,7 +75,7 @@ export function AnswerMappingScreen() {
             <QuestionsPanel />
           </motion.div>
           <motion.div
-            className="flex flex-1"
+            className="flex flex-1 min-w-0 max-w-[52%]"
             initial={{ opacity: 0, x: 12 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1], delay: 0.08 }}
