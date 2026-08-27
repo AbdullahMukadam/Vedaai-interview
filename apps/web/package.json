@@ -27,10 +27,11 @@
     "@types/node": "^22.0.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
-    "canvas": "^3.2.3",
-    "pdf-lib": "^1.17.1",
     "postcss": "^8.5.0",
     "tailwindcss": "^4.1.0",
     "typescript": "^5.8.3"
+  },
+  "optionalDependencies": {
+    "lightningcss-linux-x64-gnu": "^1.29.0"
   }
 }
