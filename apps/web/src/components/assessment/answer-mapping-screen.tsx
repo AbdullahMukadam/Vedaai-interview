@@ -5,6 +5,11 @@ import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { Sidebar } from "@/components/common/sidebar";
 import { Toolbar, MobileToolbar } from "@/components/common/toolbar";
+import {
+  ResizablePanelGroup,
+  ResizablePanel,
+  ResizableHandle,
+} from "@/components/ui/resizable";
 import { QuestionsPanel } from "./questions-panel";
 import { AnswerSheetPanel } from "./answer-sheet-panel";
 import { useAssessment } from "@/providers/assessment-provider";
@@ -65,23 +70,30 @@ export function AnswerMappingScreen() {
           sidebarCollapsed ? "lg:ml-[88px]" : "lg:ml-[328px]"
         }`}
       >
-        <div className="hidden lg:flex flex-1 gap-3 p-3 overflow-hidden">
-          <motion.div
-            className="flex flex-1 min-w-0 min-h-0"
-            initial={{ opacity: 0, x: -12 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
-          >
-            <QuestionsPanel />
-          </motion.div>
-          <motion.div
-            className="flex flex-1 min-w-0 max-w-[52%] min-h-0"
-            initial={{ opacity: 0, x: 12 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1], delay: 0.08 }}
-          >
-            <AnswerSheetPanel />
-          </motion.div>
+        <div className="hidden lg:flex flex-1 p-2 overflow-hidden">
+          <ResizablePanelGroup orientation="horizontal" className="gap-0">
+            <ResizablePanel defaultSize="55%" minSize="30%" maxSize="70%" className="min-w-0 pr-1">
+              <motion.div
+                className="flex h-full w-full min-w-0"
+                initial={{ opacity: 0, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
+              >
+                <QuestionsPanel />
+              </motion.div>
+            </ResizablePanel>
+            <ResizableHandle withHandle />
+            <ResizablePanel defaultSize="45%" minSize="30%" maxSize="70%" className="min-w-0 pl-1">
+              <motion.div
+                className="flex h-full w-full min-w-0"
+                initial={{ opacity: 0, x: 12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1], delay: 0.08 }}
+              >
+                <AnswerSheetPanel />
+              </motion.div>
+            </ResizablePanel>
+          </ResizablePanelGroup>
         </div>
 
         <div className="flex flex-1 flex-col overflow-hidden p-2 lg:hidden">

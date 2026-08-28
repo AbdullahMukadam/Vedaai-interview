@@ -58,20 +58,24 @@ export function QuestionCard({
 }: QuestionCardProps) {
   return (
     <div
-      className={`flex flex-col gap-3 rounded-2xl p-3 transition-colors ${
+      className={`flex flex-col gap-3 rounded-2xl p-4 transition-colors ${
         isSelected
           ? "border-2 border-[#FF5623] bg-white"
           : "bg-white"
       }`}
     >
       <div
-        className="flex items-start justify-between gap-4 cursor-pointer"
+        className="grid grid-cols-[auto_1fr] items-center gap-x-4 gap-y-3 cursor-pointer md:flex md:items-start md:justify-between"
         onClick={onToggleExpand}
       >
-        <div className="flex items-center gap-4">
+        <div className="col-start-1 row-start-1 flex items-center gap-4">
           {isSubQuestion ? (
             <div className="flex items-center gap-1">
-              <div className={`flex h-8 w-8 items-center justify-center rounded-full ${isExpanded ? "bg-[#FF5623]" : "bg-[rgba(43,43,43,0.8)]"} shadow-[0px_4px_16px_rgba(67,67,67,0.1),0px_8px_8.8px_rgba(134,134,134,0.1)] ring-2 ring-white/25`}>
+              <div
+                className={`flex h-8 w-8 items-center justify-center rounded-full ${
+                  isExpanded ? "bg-[#FF5623]" : "bg-[rgba(43,43,43,0.8)]"
+                } shadow-[0px_4px_16px_rgba(67,67,67,0.1),0px_8px_8.8px_rgba(134,134,134,0.1)] ring-2 ring-white/25`}
+              >
                 <span className="text-[20px] font-extrabold tracking-[-0.04em] text-white">
                   {number}
                 </span>
@@ -83,7 +87,11 @@ export function QuestionCard({
               </div>
             </div>
           ) : (
-            <div className={`flex h-8 w-8 items-center justify-center rounded-full ${isExpanded ? "bg-[#FF5623]" : "bg-[rgba(43,43,43,0.8)]"} shadow-[0px_4px_16px_rgba(67,67,67,0.1),0px_8px_8.8px_rgba(134,134,134,0.1)] ring-2 ring-white/25`}>
+            <div
+              className={`flex h-8 w-8 items-center justify-center rounded-full ${
+                isExpanded ? "bg-[#FF5623]" : "bg-[rgba(43,43,43,0.8)]"
+              } shadow-[0px_4px_16px_rgba(67,67,67,0.1),0px_8px_8.8px_rgba(134,134,134,0.1)] ring-2 ring-white/25`}
+            >
               <span className="text-[20px] font-extrabold tracking-[-0.04em] text-white">
                 {number}
               </span>
@@ -91,19 +99,23 @@ export function QuestionCard({
           )}
         </div>
 
-        <p className="flex-1 text-[16px] leading-[1.4em] tracking-[-0.04em] text-[#303030]">
+        <p className="col-span-2 row-start-2 text-[16px] leading-[1.4em] tracking-[-0.04em] text-[#303030] md:col-auto md:row-auto md:flex-1">
           {text}
         </p>
 
-        <div className="flex items-center gap-3">
+        <div className="col-start-2 row-start-1 flex items-center gap-3 justify-self-end shrink-0 md:col-auto md:row-auto md:justify-self-auto">
           {score && (
             <div
               className="flex items-center gap-1 rounded-full px-3 py-1 shrink-0"
-              style={{ backgroundColor: getScoreColor(score.earned, score.total).bg }}
+              style={{
+                backgroundColor: getScoreColor(score.earned, score.total).bg,
+              }}
             >
               <span
                 className="text-[16px] font-bold"
-                style={{ color: getScoreColor(score.earned, score.total).text }}
+                style={{
+                  color: getScoreColor(score.earned, score.total).text,
+                }}
               >
                 {score.earned} / {score.total}
               </span>
