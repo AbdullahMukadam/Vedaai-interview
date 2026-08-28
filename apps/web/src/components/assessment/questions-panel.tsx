@@ -36,7 +36,7 @@ export function QuestionsPanel() {
   }
 
   return (
-    <div className="flex flex-1 flex-col gap-3 rounded-[20px] bg-white/50 p-4">
+    <div className="flex min-h-0 flex-1 flex-col gap-3 rounded-[20px] bg-white/50 p-4">
       <div className="flex items-center justify-between shrink-0">
         <span className="text-[16px] font-bold text-[#303030]">
           Extracted Questions ({result.questions.length})
