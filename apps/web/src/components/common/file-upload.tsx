@@ -16,7 +16,7 @@ interface FileUploadProps {
 export function FileUpload({
   label,
   highlight,
-  accept = "application/pdf,image/*",
+  accept = "application/pdf",
   onFileSelect,
   disabled = false,
   className,
