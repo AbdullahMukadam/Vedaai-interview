@@ -162,12 +162,12 @@ export function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
             <a
               key={item.label}
               href="#"
-              className={`flex items-center gap-2 rounded-lg transition-colors duration-150 ${
+              className={`group flex items-center gap-2 rounded-lg transition-all duration-200 ${
                 isCollapsed ? "justify-center p-2" : "px-3 py-[9px]"
               } ${
                 item.active
                   ? "bg-[#F0F0F0] font-medium text-[#303030]"
-                  : "text-[rgba(94,94,94,0.8)] hover:bg-gray-50"
+                  : "text-[rgba(94,94,94,0.8)] hover:bg-[#F5F5F5] hover:text-[#303030]"
               }`}
               title={isCollapsed ? item.label : undefined}
             >
@@ -176,7 +176,9 @@ export function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
                 alt=""
                 width={20}
                 height={20}
-                className={item.active ? "opacity-100" : "opacity-80"}
+                className={`transition-all duration-200 group-hover:scale-110 ${
+                  item.active ? "opacity-100" : "opacity-80 group-hover:opacity-100"
+                }`}
               />
               <AnimatePresence initial={false}>
                 {!isCollapsed && (
@@ -199,12 +201,18 @@ export function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
       <div className={`flex flex-col gap-2 ${isCollapsed ? "items-center" : "w-full"}`}>
         <a
           href="#"
-          className={`flex items-center gap-2 rounded-lg transition-colors duration-150 ${
+          className={`group flex items-center gap-2 rounded-lg transition-all duration-200 ${
             isCollapsed ? "justify-center p-2" : "px-3 py-[2px]"
-          } text-[16px] leading-[22px] tracking-[-0.04em] text-[rgba(94,94,94,0.8)] hover:bg-gray-50`}
+          } text-[16px] leading-[22px] tracking-[-0.04em] text-[rgba(94,94,94,0.8)] hover:bg-[#F5F5F5] hover:text-[#303030]`}
           title={isCollapsed ? "Settings" : undefined}
         >
-          <Image src="/icons/icon-settings.svg" alt="" width={20} height={20} />
+          <Image
+            src="/icons/icon-settings.svg"
+            alt=""
+            width={20}
+            height={20}
+            className="transition-all duration-200 group-hover:scale-110"
+          />
           <AnimatePresence initial={false}>
             {!isCollapsed && (
               <motion.span
@@ -228,6 +236,7 @@ export function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
+              whileHover={{ y: -2 }}
               transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
             >
               <div className="rounded-2xl bg-[#F0F0F0] p-[2px]">
@@ -255,10 +264,11 @@ export function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
           ) : (
             <motion.div
               key="expanded-school"
-              className="rounded-2xl bg-[#F0F0F0] p-3 flex gap-2"
+              className="rounded-2xl bg-[#F0F0F0] p-3 flex gap-2 cursor-pointer"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
+              whileHover={{ y: -2 }}
               transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
             >
               <Image

@@ -84,7 +84,7 @@ export function FileUpload({
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
       className={cn(
-        "flex flex-1 items-center justify-center rounded-[20px] border-[1.5px] border-dashed border-[#CECECE] bg-white p-2.5 transition-[border-color,background-color] duration-150",
+        "flex flex-1 items-center justify-center rounded-[20px] border-[2px] h-36 border-dashed border-[#CECECE] bg-white p-4 transition-[border-color,background-color] duration-150",
         isDragging && "border-[#FF5623] bg-[#FF5623]/5",
         disabled && "cursor-not-allowed opacity-50",
         !disabled && "cursor-pointer hover:border-[#FF5623]/50 active:scale-[0.98]",

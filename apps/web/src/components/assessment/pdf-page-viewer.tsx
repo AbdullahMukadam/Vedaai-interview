@@ -99,7 +99,7 @@ export function PdfPageViewer({ data, pageNumber, scale, highlights, onTotalPage
               borderRadius: 12,
             }}
           >
-            <div className="absolute -top-6 left-2 rounded-t-lg bg-[#34AC15] px-2 py-0.5">
+            <div className="absolute -top-7 left-2 rounded-t-lg bg-[#34AC15] px-2 py-0.5">
               <span className="text-[12px] font-bold text-white">
                 Q{h.questionLabel}
               </span>

@@ -15,27 +15,27 @@ export function Toolbar({ sidebarCollapsed }: ToolbarProps) {
         sidebarCollapsed ? "ml-[88px]" : "ml-[328px]"
       } mt-3 mx-3`}
     >
-      <div onClick={() => router.push("/")} className="flex cursor-pointer h-10 w-10 items-center justify-center rounded-full bg-white">
+      <div onClick={() => router.push("/")} className="flex cursor-pointer h-10 w-10 items-center justify-center rounded-full bg-white transition-all duration-200 hover:bg-[#F0F0F0] hover:scale-105 active:scale-95">
         <Image src="/images/arrow-back.svg" alt="Back" width={24} height={24} />
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 transition-opacity duration-200 hover:opacity-70">
         <Image src="/icons/icon-clipboard.svg" alt="" width={20} height={20} />
         <span className="text-[16px] font-semibold tracking-[-0.04em] text-[#A9A9A9]">
           Exams
         </span>
       </div>
       <div className="flex-1" />
-      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F6F6F6]">
+      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F6F6F6] transition-all duration-200 hover:bg-[#EDEDED] hover:scale-105 active:scale-95">
         <Image src="/images/question-mark.svg" alt="Help" width={20} height={20} />
       </div>
-      <div className="relative flex h-9 w-9 items-center justify-center rounded-full bg-[#F6F6F6]">
+      <div className="relative flex h-9 w-9 items-center justify-center rounded-full bg-[#F6F6F6] transition-all duration-200 hover:bg-[#EDEDED] hover:scale-105 active:scale-95">
         <Image src="/images/bell-desktop2.svg" alt="Notifications" width={24} height={24} />
         <span className="absolute right-[3px] top-[3px] h-2 w-2 rounded-full bg-[#FF5623]" />
       </div>
-      <div className="h-9 w-9 rounded-full bg-[#F6F6F6]">
+      <div className="h-9 w-9 rounded-full bg-[#F6F6F6] transition-all duration-200 hover:scale-105 active:scale-95">
         <Image src="/images/user-avatar.png" alt="User" width={36} height={36} className="rounded-full object-cover" />
       </div>
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-1 transition-opacity duration-200 hover:opacity-70">
         <span className="text-[16px] font-semibold tracking-[-0.04em] text-[#303030]">
           Madhur Rastogi
         </span>
@@ -56,12 +56,12 @@ export function MobileToolbar() {
           </span>
         </div>
         <div className="flex items-center gap-3">
-          <div className="relative flex h-9 w-9 items-center justify-center rounded-full bg-[#F6F6F6]">
+          <div className="relative flex h-9 w-9 items-center justify-center rounded-full bg-[#F6F6F6] transition-all duration-200 hover:bg-[#EDEDED] hover:scale-105 active:scale-95">
             <Image src="/images/bell.svg" alt="Notifications" width={24} height={24} />
             <span className="absolute right-[3px] top-[3px] h-2 w-2 rounded-full bg-[#FF5623]" />
           </div>
-          <div className="h-8 w-8 rounded-full bg-[#F6F6F6]" />
-          <Image src="/images/menu.svg" alt="Menu" width={24} height={24} />
+          <div className="h-8 w-8 rounded-full bg-[#F6F6F6] transition-transform duration-200 hover:scale-105 active:scale-95" />
+          <Image src="/images/menu.svg" alt="Menu" width={24} height={24} className="transition-transform duration-200 hover:scale-110 active:scale-95" />
         </div>
       </div>
     </header>

@@ -44,7 +44,7 @@ export function QuestionsPanel() {
         <button
           type="button"
           onClick={expandAll}
-          className="rounded-full bg-white px-5 py-3 text-[14px] font-medium text-[#181818]"
+          className="rounded-full cursor-pointer bg-white px-5 py-3 text-[14px] font-medium text-[#181818]"
         >
           {allExpanded ? "Collapse All" : "Expand All"}
         </button>

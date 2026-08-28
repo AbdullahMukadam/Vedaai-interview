@@ -1,4 +1,4 @@
-import { AnswerMappingScreen } from "@/features/assessment/components/answer-mapping-screen";
+import { AnswerMappingScreen } from "@/components/assessment/answer-mapping-screen";
 
 export default function AssessmentResultsPage() {
   return <AnswerMappingScreen />;

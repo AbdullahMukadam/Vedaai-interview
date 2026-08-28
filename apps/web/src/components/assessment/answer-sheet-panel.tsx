@@ -70,25 +70,25 @@ export function AnswerSheetPanel() {
         </span>
         <div className="w-full md:w-fit flex justify-between items-center gap-3">
           <div className="flex items-center gap-2 rounded-lg bg-white/10 p-1 py-1 md:px-3 md:py-2">
-            <button type="button" onClick={() => setZoom(Math.max(25, zoom - 25))}>
+            <button className="cursor-pointer" type="button" onClick={() => setZoom(Math.max(25, zoom - 25))}>
               <MinusIcon />
             </button>
             <span className="text-[14px] font-bold text-white min-w-[40px] text-center">
               {zoom}%
             </span>
-            <button type="button" onClick={() => setZoom(Math.min(200, zoom + 25))}>
+            <button className="cursor-pointer" type="button" onClick={() => setZoom(Math.min(200, zoom + 25))}>
               <PlusIcon />
             </button>
           </div>
 
           <div className="flex items-center gap-2 rounded-lg bg-white/10 p-1 py-1 md:px-3 md:py-2">
-            <button type="button" onClick={() => setPage(Math.max(1, page - 1))}>
+            <button className="cursor-pointer" type="button" onClick={() => setPage(Math.max(1, page - 1))}>
               <ChevronLeft />
             </button>
             <span className="text-[14px] font-bold text-white">
               Page {page} of {totalPages}
             </span>
-            <button type="button" onClick={() => setPage(Math.min(totalPages, page + 1))}>
+            <button className="cursor-pointer" type="button" onClick={() => setPage(Math.min(totalPages, page + 1))}>
               <ChevronRight />
             </button>
           </div>

@@ -16,7 +16,7 @@ export function FilePreview({
   onRemove,
 }: FilePreviewProps) {
   return (
-    <div className="relative flex flex-1 items-center justify-center rounded-[20px] border-[1.5px] border-dashed border-[#CECECE] bg-white p-2.5">
+    <div className="relative flex flex-1 items-center justify-center h-36 rounded-[20px] border-[2px] border-dashed border-[#CECECE] bg-white p-4">
       <div className="flex items-center gap-3 rounded-xl bg-[#F6F6F6] p-3 pr-5 relative">
         <div className="h-[35px] w-[40px] shrink-0 overflow-hidden rounded">
           <Image

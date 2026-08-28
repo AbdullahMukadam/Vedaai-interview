@@ -60,7 +60,7 @@ export function QuestionCard({
     <div
       className={`flex flex-col gap-3 rounded-2xl p-3 transition-colors ${
         isSelected
-          ? "border-2 border-[#FF8D36] bg-white"
+          ? "border-2 border-[#FF5623] bg-white"
           : "bg-white"
       }`}
     >
@@ -71,7 +71,7 @@ export function QuestionCard({
         <div className="flex items-center gap-4">
           {isSubQuestion ? (
             <div className="flex items-center gap-1">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(43,43,43,0.8)] shadow-[0px_4px_16px_rgba(67,67,67,0.1),0px_8px_8.8px_rgba(134,134,134,0.1)] ring-2 ring-white/25">
+              <div className={`flex h-8 w-8 items-center justify-center rounded-full ${isExpanded ? "bg-[#FF5623]" : "bg-[rgba(43,43,43,0.8)]"} shadow-[0px_4px_16px_rgba(67,67,67,0.1),0px_8px_8.8px_rgba(134,134,134,0.1)] ring-2 ring-white/25`}>
                 <span className="text-[20px] font-extrabold tracking-[-0.04em] text-white">
                   {number}
                 </span>
@@ -83,7 +83,7 @@ export function QuestionCard({
               </div>
             </div>
           ) : (
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(43,43,43,0.8)] shadow-[0px_4px_16px_rgba(67,67,67,0.1),0px_8px_8.8px_rgba(134,134,134,0.1)] ring-2 ring-white/25">
+            <div className={`flex h-8 w-8 items-center justify-center rounded-full ${isExpanded ? "bg-[#FF5623]" : "bg-[rgba(43,43,43,0.8)]"} shadow-[0px_4px_16px_rgba(67,67,67,0.1),0px_8px_8.8px_rgba(134,134,134,0.1)] ring-2 ring-white/25`}>
               <span className="text-[20px] font-extrabold tracking-[-0.04em] text-white">
                 {number}
               </span>

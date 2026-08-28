@@ -1,4 +1,4 @@
-import { UploadScreen } from "@/features/assessment/components/upload-screen";
+import { UploadScreen } from "@/components/assessment/upload-screen";
 
 export default function Home() {
   return <UploadScreen />;
