@@ -17,12 +17,6 @@ export interface GeminiAnswerExtraction {
       ymax: number;
       xmax: number;
     };
-    questionBoundingBox?: {
-      ymin: number;
-      xmin: number;
-      ymax: number;
-      xmax: number;
-    };
     pageNumber: number;
     isComplete: boolean;
   }>;

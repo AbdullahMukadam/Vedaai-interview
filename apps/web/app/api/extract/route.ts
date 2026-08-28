@@ -7,19 +7,6 @@ async function fileToBase64(file: File): Promise<string> {
   return buffer.toString("base64");
 }
 
-function unionBox(
-  a: { ymin: number; xmin: number; ymax: number; xmax: number },
-  b?: { ymin: number; xmin: number; ymax: number; xmax: number }
-): { ymin: number; xmin: number; ymax: number; xmax: number } {
-  if (!b) return a;
-  return {
-    ymin: Math.min(a.ymin, b.ymin),
-    xmin: Math.min(a.xmin, b.xmin),
-    ymax: Math.max(a.ymax, b.ymax),
-    xmax: Math.max(a.xmax, b.xmax),
-  };
-}
-
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
@@ -70,7 +57,7 @@ export async function POST(request: NextRequest) {
         id: `a-${idx}`,
         questionNumber: a.questionNumber,
         text: a.text,
-        boundingBox: unionBox(a.boundingBox, a.questionBoundingBox),
+        boundingBox: a.boundingBox,
         pageNumber: a.pageNumber,
         isComplete: a.isComplete,
         pageWidth: 800,
@@ -93,7 +80,7 @@ export async function POST(request: NextRequest) {
           feedback: m.feedback,
           isCorrect: m.isCorrect,
           confidence: m.confidence,
-          boundingBoxes: matchingAnswers.map((a) => unionBox(a.boundingBox, a.questionBoundingBox)),
+          boundingBoxes: matchingAnswers.map((a) => a.boundingBox),
           pages: [...new Set(matchingAnswers.map((a) => a.pageNumber))],
         };
       }),

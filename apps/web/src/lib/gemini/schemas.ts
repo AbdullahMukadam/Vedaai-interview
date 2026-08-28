@@ -84,34 +84,6 @@ export const answerExtractionSchema: Schema = {
             type: SchemaType.BOOLEAN,
             description: "Whether the answer appears complete",
           },
-          questionBoundingBox: {
-            type: SchemaType.OBJECT,
-            description:
-              "Bounding box of just the question number/heading the student wrote above the answer",
-            properties: {
-              ymin: {
-                type: SchemaType.INTEGER,
-                description:
-                  "Top edge of the question heading, normalized 0-1000",
-              },
-              xmin: {
-                type: SchemaType.INTEGER,
-                description:
-                  "Left edge of the question heading, normalized 0-1000",
-              },
-              ymax: {
-                type: SchemaType.INTEGER,
-                description:
-                  "Bottom edge of the question heading, normalized 0-1000",
-              },
-              xmax: {
-                type: SchemaType.INTEGER,
-                description:
-                  "Right edge of the question heading, normalized 0-1000",
-              },
-            },
-            required: ["ymin", "xmin", "ymax", "xmax"],
-          },
         },
         required: [
           "questionNumber",
